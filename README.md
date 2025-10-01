@@ -60,10 +60,63 @@ Este proyecto está organizado en **tres sprints** de una semana cada uno. Utili
 
 ## Instalación y Ejecución
 
-1. Clonar el repositorio.
-2. Configurar la base de datos H2.
-3. Ejecutar el proyecto con `mvn spring-boot:run`.
-4. Utilizar Postman para probar endpoints.
+1. **Clonar el repositorio:**
+   ```bash
+   git clone <url-del-repositorio>
+   cd proyectohalloween
+   ```
+
+2. **Ejecutar el proyecto:**
+   ```bash
+   mvn spring-boot:run
+   ```
+
+3. **Acceder a la aplicación:**
+   - API REST: `http://localhost:8081`
+   - Consola H2: `http://localhost:8081/h2-console`
+     - JDBC URL: `jdbc:h2:mem:testdb`
+     - Usuario: `sa`
+     - Contraseña: `password`
+
+## Endpoints de la API
+
+### Objetos del Juego
+- `GET /api/objects` - Obtener todos los objetos
+- `GET /api/objects/{id}` - Obtener objeto por ID
+- `POST /api/objects` - Crear nuevo objeto
+- `PUT /api/objects/{id}` - Actualizar objeto
+- `DELETE /api/objects/{id}` - Eliminar objeto
+- `GET /api/objects/type/{type}` - Filtrar por tipo
+- `GET /api/objects/search?name={name}` - Buscar por nombre
+
+### Habilidades
+- `GET /api/abilities` - Obtener todas las habilidades
+- `GET /api/abilities/{id}` - Obtener habilidad por ID
+- `POST /api/abilities` - Crear nueva habilidad
+- `PUT /api/abilities/{id}` - Actualizar habilidad
+- `DELETE /api/abilities/{id}` - Eliminar habilidad
+
+### Información del Juego
+- `GET /api/game/info` - Información general del juego
+- `GET /api/game/levels` - Información de niveles
+
+## Ejemplos de Uso
+
+### Crear un objeto
+```bash
+curl -X POST http://localhost:8081/api/objects \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Espada Mágica",
+    "type": "arma",
+    "efect": "Daño +15"
+  }'
+```
+
+### Obtener información del juego
+```bash
+curl http://localhost:8081/api/game/info
+```
 
 ## Entregables
 

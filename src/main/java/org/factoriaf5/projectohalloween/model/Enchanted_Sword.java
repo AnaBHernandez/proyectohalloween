@@ -18,7 +18,7 @@ public class Enchanted_Sword {
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
     @Column(name = "id_EnchantedSword")
 
-    private int id;
+    private Long id;
     private String name;
     private String type;
     private String efect;
@@ -30,7 +30,7 @@ public class Enchanted_Sword {
     public Enchanted_Sword() {
     }
 
-    public Enchanted_Sword(int id, String name, String type, String efect, Object object) {
+    public Enchanted_Sword(Long id, String name, String type, String efect, Object object) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -38,11 +38,11 @@ public class Enchanted_Sword {
         this.object = object;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

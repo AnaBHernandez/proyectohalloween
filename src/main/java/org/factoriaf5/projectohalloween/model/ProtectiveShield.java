@@ -10,9 +10,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Protectiveshield")
-
-public class Protectiveshield {
+@Table(name = "Protective_shield")
+public class ProtectiveShield {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,14 +23,14 @@ public class Protectiveshield {
     private String effect;
 
     
-    public Protectiveshield() {
-    }
-
     @ManyToOne
     @JoinColumn(name = "id_ability")
     private Ability ability;
 
-    public Protectiveshield(Long id, String name, String type, String effect, Ability ability) {
+    public ProtectiveShield() {
+    }
+
+    public ProtectiveShield(Long id, String name, String type, String effect, Ability ability) {
         this.id = id;
         this.name = name;
         this.type = type;
